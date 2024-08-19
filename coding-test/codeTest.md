@@ -36,3 +36,9 @@ As for converting the array to a tree structure.
 
 Async operations are often encountered in network programming. While writing async code, the code is often cluttered and difficult to debug. Here I have learned and used an async handling method called `Promise` that allows for efficient error handling and also improves the readability of the code.
 
+
+
+
+## Question 3
+
+### 1.1 Basic idea
