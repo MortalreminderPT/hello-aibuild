@@ -1,9 +1,8 @@
 const https = require('node:https');
 
 function checkConnection(uri, callback) {
-  // Response less than 500ms is good
+  // response time < 500ms is good and 500ms < response time < 5000ms is fine.
   const RESPONSE_TIME_GOOD = 500;
-  // Response less than 5000ms is fine
   const RESPONSE_TIME_FINE = 5000;
   const startTime = Date.now();
   // Store the result of the connection check
@@ -53,9 +52,6 @@ function testCheckConnection() {
   ];
   for (let i = 0; i < 10; i++) {
     uris.forEach((uri) =>
-      // checkConnection(uri, (result) => {
-      //   console.log(uri, result);
-      // }));
       checkConnection(uri, (result) => {
         console.log(`Uri: ${uri}, Condition: ${result.condition}, Time: ${result.time}ms`);
       }));
