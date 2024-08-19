@@ -3,7 +3,7 @@ const http = require('node:http');
 /**
  * Test function which get categories tree.
  */
-function listCategories() {
+function fetchCategories() {
   // Send a GET request the api
   const req = http.get('http://localhost:8080/categories', res => {
     let data = '';
@@ -23,4 +23,4 @@ function listCategories() {
   });
 }
 
-listCategories();
+fetchCategories();
