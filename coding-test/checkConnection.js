@@ -40,4 +40,26 @@ function checkConnection(uri, callback) {
   });
 }
 
-checkConnection('https://www.google.com/', result => console.log(result));
+function testCheckConnection() {
+  // Testing different sources of uri
+  const uris = [
+    'https://www.google.com/',
+    'https://www.example.com/',
+    'https://api.github.com/',
+    'https://www.google.com/search?q=hello+world',
+    'https://localhost:8080',
+    'https://nodejs.org/static/logos/nodejsDark.svg',
+    'https://www.youtube.com/watch?v=Uc5tW3gpzac',
+  ];
+  for (let i = 0; i < 10; i++) {
+    uris.forEach((uri) =>
+      // checkConnection(uri, (result) => {
+      //   console.log(uri, result);
+      // }));
+      checkConnection(uri, (result) => {
+        console.log(`Uri: ${uri}, Condition: ${result.condition}, Time: ${result.time}ms`);
+      }));
+  }
+}
+
+testCheckConnection();
