@@ -68,6 +68,11 @@ function readJsonFile(filePath) {
 }
 
 const server = http.createServer((req, res) => {
+  // Resolve CORS issues for Question 3
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
   // Handle the GET method of `/categories` routes
   if (req.url === '/categories' && req.method === 'GET') {
     const result = getCategoriesTree();

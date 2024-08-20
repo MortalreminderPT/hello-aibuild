@@ -42,3 +42,13 @@ Async operations are often encountered in network programming. While writing asy
 ## Question 3
 
 ### 1.1 Basic idea
+
+
+
+
+
+### 1.2
+
+Access to fetch at 'http://localhost:8080/categories' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+
+
