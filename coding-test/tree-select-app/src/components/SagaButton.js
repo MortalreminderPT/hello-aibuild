@@ -10,7 +10,7 @@ function SagaButton() {
     dispatch({ type: 'FETCH_CATEGORIES_SAGA' });
   };
 
-  return <Button onClick={handleClick}>Fetch Categories with Saga</Button>;
+  return <Button onClick={handleClick} >Fetch with Saga</Button>;
 }
 
 export default SagaButton;

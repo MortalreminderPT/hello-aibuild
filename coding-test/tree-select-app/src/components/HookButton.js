@@ -10,7 +10,7 @@ function HookButton() {
     dispatch(fetchCategoriesHook());
   };
 
-  return <Button onClick={handleClick}>Fetch Categories with Hook</Button>;
+  return <Button onClick={handleClick}>Fetch with Hook</Button>;
 }
 
 export default HookButton;

@@ -10,17 +10,19 @@ const categorySlice = createSlice({
   name: 'categories',
   initialState: {
     categories: [],
+    tip: "Press the button to fetch categories.",
     loading: false,
     error: null,
   },
   reducers: {
     fetchCategoriesSuccess: (state, action) => {
       state.categories = action.payload;
+      state.tip = "You fetched with Saga!";
       state.loading = false;
       state.error = null;
     },
     fetchCategoriesFailure: (state, action) => {
-      state.error = action.payload;
+      state.error = "Error: request rejected";
       state.loading = false;
     },
     setLoading: (state, action) => {
@@ -35,10 +37,11 @@ const categorySlice = createSlice({
       })
       .addCase(fetchCategoriesHook.fulfilled, (state, action) => {
         state.categories = action.payload;
+        state.tip = "You fetched with Hook!";
         state.loading = false;
       })
       .addCase(fetchCategoriesHook.rejected, (state, action) => {
-        state.error = action.payload;
+        state.error = "Error: request rejected";
         state.loading = false;
       });
   },
