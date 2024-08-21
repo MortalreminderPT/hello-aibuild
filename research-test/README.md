@@ -22,7 +22,7 @@ curl 'https://www.goodschools.com.au/compare-schools/search/in-victoria?distance
 
 Then, import this request into Postman using cURL and generate Python code with the Code snippet feature:
 
-![image-20240821223911482](./assets/image-20240821223911482.png)
+![image-20240821233913215](./assets/image-20240821233913215.png)
 
 Encapsulate this code into a function `get_search_page()` and make adjustments to pass the page number as a parameter, allowing you to crawl different pages. The HTTP crawling code is complete.
 
