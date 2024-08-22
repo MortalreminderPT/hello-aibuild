@@ -1,6 +1,9 @@
 # mac os
 .DS_Store
 
+# Jupyter
+# .ipynb_checkpoints
+
 # Logs
 logs
 *.log
