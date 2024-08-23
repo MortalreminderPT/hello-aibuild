@@ -69,9 +69,9 @@ const App = () => {
   const default_school = {
     lat: '-35.02044765',
     lon: '117.8917733',
-    num_student: '900',
+    num_student: '750',
     atar: '70',
-    icsea: '1010',
+    icsea: '1200',
     order: 'distance',
   }
   
@@ -108,11 +108,20 @@ const App = () => {
         </Form.Item>
 
         <Form.Item name="num_student" label="Student Number" rules={[{ required: true }]}>
-          <Input />
+          {/* <Input /> */}
+          <Select defaultValue="500-1000" >
+            <Option value="125">0-250</Option>
+            <Option value="375">250-500</Option>
+            <Option value="750">500-1000</Option>
+            <Option value="1500">1000+</Option>
+          </Select>
         </Form.Item>
 
         <Form.Item name="icsea" label="ICSEA" rules={[{ required: true }]}>
-          <Input />
+          <Select defaultValue="500-1000" >
+            <Option value="800">0-1000</Option>
+            <Option value="1200">1000+</Option>
+          </Select>
         </Form.Item>
 
         <Form.Item name="atar" label="ATAR" rules={[{ required: true }]}>
