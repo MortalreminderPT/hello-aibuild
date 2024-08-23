@@ -1,5 +1,6 @@
 import csv
 import math
+import torch
 import numpy as np
 
 # Convert a string to an integer. If the conversion fails, return -1.
@@ -89,20 +90,22 @@ def process(school_list):
 # Handle missing values based on the specified strategy (either filling them with means or removing rows).
 def normalize(processed_array, means, std_dev, miss_value_handling):
     # Define weights for each feature to adjust their contribution in the normalization.
-    weights = np.array([1, 1, 1, 1, 2, 4, 4])  # Adjusts the importance of specific features.
-    
-    # Use z-score normailzation
-    processed_array = (processed_array - means) / std_dev
-    # Calculate weighted array
-    processed_array = weights * processed_array
+    weights = np.array([1, 1, 1, 1, 2, 2, 2])  # Adjusts the importance of specific features.
     
     # Handle missing values (-1) based on the specified strategy.
     if miss_value_handling == "means_filling":
         # Replace missing values (-1) with the corresponding mean value.
-        processed_array = np.where(processed_array == -1, means, processed_array)
+        processed_array = np.where(processed_array == np.nan, means, processed_array)
     else:
         # Identify rows that contain missing values and remove them.
-        rows_to_remove = np.any(processed_array == -1, axis=1)
+        rows_to_remove = np.any(processed_array == np.nan, axis=1)
         processed_array = processed_array[~rows_to_remove]
+
+    print(processed_array)
+
+    # Use z-score normailzation
+    processed_array = (processed_array - means) / std_dev
+    # Calculate weighted array
+    processed_array = weights * processed_array
     
     return processed_array

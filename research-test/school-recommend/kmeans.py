@@ -24,7 +24,7 @@ def predict(school):
 
     predict_tensor = torch.tensor(predict_array)
 
-    cluster_ids_y = kmeans_predict(predict_tensor, centers, 'euclidean')
+    cluster_ids_y = kmeans_predict(predict_tensor, centers, 'cosine')
 
     school_list = read('./wa_secondary_schools.csv')
     recommend_schools = []

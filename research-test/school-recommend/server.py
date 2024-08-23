@@ -28,6 +28,8 @@ def get_recommendations():
         sorted_schools.sort(key=lambda x: x["atar"], reverse=True)
     elif order == "icsea":
         sorted_schools.sort(key=lambda x: x["icsea"], reverse=True)
+    elif order == "num_student":
+        sorted_schools.sort(key=lambda x: x["num_student"], reverse=True)
     
     return sorted_schools
 
