@@ -1,0 +1,4 @@
+Flask==2.2.5
+kmeans_pytorch==0.3
+numpy==2.1.0
+torch==2.4.0

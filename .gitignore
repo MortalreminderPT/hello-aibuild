@@ -2,7 +2,8 @@
 .DS_Store
 
 # Jupyter
-# .ipynb_checkpoints
+.ipynb_checkpoints
+.virtual_documents
 
 # Python
 __pycache__
